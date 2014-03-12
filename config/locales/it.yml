@@ -7,15 +7,12 @@ it:
     not_signed_in: 'Accesso negato. Eseguire il login per proseguire'
 
 # VIEWS
-  stats:
+  practices:
     index:
-      title: 'Statistiche'
-  shipments:
+      title: 'Pratiche'
+  sentences:
     index:
-      title: 'Invii'
-  inboxes:
-    index:
-      title: 'Ricezioni'
+      title: 'Sentenze'
   devise:
     sessions:
       new:

@@ -30,37 +30,28 @@ it:
         even: "deve essere pari"
         email_record_invalid: "La validazione e fallita: %{errors}"
     models:
-      shipment:
-        one: "Spedizione"
-        other: "Spedizioni"
-      account:
-        one: "Account"
-        other: "Accounts"
-      channel:
-        one: "Canale"
-        other: "Canali"
-      customer:
-        one: "Cliente"
-        other: "Clienti"
-      department:
-        one: "Dipartimento"
-        other: "Dipartimenti"
-      outbox:
-        one: "Posta in uscita"
-        other: "Posta in uscita"
-      inbox:
-        one: "Ricezione"
-        other: "Ricezioni"
+      practice:
+        one: "Pratica"
+        other: "Pratiche"
+      sentence:
+        one: "Sentenza"
+        other: "Sentenze"
       user:
         one: "Utente"
         other: "Utenti"
     attributes:
-      shipment:
-        templateStream: "Modello"
-        sourceStream: "Dati"
-        description: "Descrizione"
-        account: "Account"
-        created_at: "Creato il"
+      practice:
+        practice_type: "Tipo"
+        presentation_date: "Data di presentazione"
+        created_at: "Creata il"
+      sentence:
+        number: "Numero"
+        year: "Anno"
+        sentence_date: "Data"
+        pubblication_date: "Data di pubblicazione"
+        role_number: "Numero iscrizione a ruolo"
+        role_year: "Anno iscrizione a ruolo"
+        created_at: "Creata il"
       user:
         name: "Nome"
         password: "Password"

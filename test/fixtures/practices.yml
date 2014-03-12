@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  practice_type: 1
+  presentation_date: 2014-03-12 12:36:38
+  sentence_id: 1
+  actor_id: 1
+  defendant_id: 1
+  magistrate_id: 1
+  marriage_act_id: 1
+
+two:
+  practice_type: 1
+  presentation_date: 2014-03-12 12:36:38
+  sentence_id: 1
+  actor_id: 1
+  defendant_id: 1
+  magistrate_id: 1
+  marriage_act_id: 1
