@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
-  <data-source source="LOCAL" name="Rails zapdelivery: development" product="SQLite" version="3.7.2" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native" uuid="5bf25c51-9a58-4035-9c43-92d42f4aac3e">
+  <data-source source="LOCAL" name="Rails semplificami: development" product="SQLite" version="3.7.2" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native" uuid="5bf25c51-9a58-4035-9c43-92d42f4aac3e">
     <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
     <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/development.sqlite3</jdbc-url>
     <libraries>
@@ -95,7 +95,7 @@
       <index name="index_users_on_email" unique="true" columns="email"/>
     </table>
   </data-source>
-  <data-source source="LOCAL" name="Rails zapdelivery: production" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="3c143fbf-ccbf-4160-b042-b22b40fa7c18">
+  <data-source source="LOCAL" name="Rails semplificami: production" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="3c143fbf-ccbf-4160-b042-b22b40fa7c18">
     <jdbc-driver>org.postgresql.Driver</jdbc-driver>
     <jdbc-url>jdbc:postgresql:semplificami_production</jdbc-url>
     <libraries>
@@ -107,7 +107,7 @@
       </library>
     </libraries>
   </data-source>
-  <data-source source="LOCAL" name="Rails zapdelivery: test" product="SQLite" version="3.7.2" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native" uuid="b50e6419-b72f-474c-a3a9-f93c2d3e8dc0">
+  <data-source source="LOCAL" name="Rails semplificami: test" product="SQLite" version="3.7.2" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native" uuid="b50e6419-b72f-474c-a3a9-f93c2d3e8dc0">
     <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
     <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/test.sqlite3</jdbc-url>
     <libraries>
