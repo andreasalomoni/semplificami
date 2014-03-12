@@ -18,7 +18,7 @@ class SentencesControllerTest < ActionController::TestCase
 
   test "should create sentence" do
     assert_difference('Sentence.count') do
-      post :create, sentence: { number: @sentence.number, pubblication_date: @sentence.pubblication_date, role_number: @sentence.role_number, role_year: @sentence.role_year, sentence_date: @sentence.sentence_date, year: @sentence.year }
+      post :create, sentence: { number: @sentence.number, publication_date: @sentence.publication_date, role_number: @sentence.role_number, role_year: @sentence.role_year, sentence_date: @sentence.sentence_date, year: @sentence.year }
     end
 
     assert_redirected_to sentence_path(assigns(:sentence))
@@ -35,7 +35,7 @@ class SentencesControllerTest < ActionController::TestCase
   end
 
   test "should update sentence" do
-    patch :update, id: @sentence, sentence: { number: @sentence.number, pubblication_date: @sentence.pubblication_date, role_number: @sentence.role_number, role_year: @sentence.role_year, sentence_date: @sentence.sentence_date, year: @sentence.year }
+    patch :update, id: @sentence, sentence: { number: @sentence.number, publication_date: @sentence.publication_date, role_number: @sentence.role_number, role_year: @sentence.role_year, sentence_date: @sentence.sentence_date, year: @sentence.year }
     assert_redirected_to sentence_path(assigns(:sentence))
   end
 

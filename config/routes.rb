@@ -1,5 +1,7 @@
 SemplificaMI::Application.routes.draw do
 
+  resources :marriage_acts
+
   resources :sentences
 
   resources :practices
@@ -7,7 +9,7 @@ SemplificaMI::Application.routes.draw do
 #  get "stats/index"
 #  get "stats/data"
 #  get "stats/drilldown"
-#  root 'shipments#index'
+  root 'practices#index'
 
 #  match '/datasources/show/:id' => 'datasources#show', as: 'datasource_show', via: :get
 

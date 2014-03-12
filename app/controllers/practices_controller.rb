@@ -15,6 +15,9 @@ class PracticesController < ApplicationController
   # GET /practices/new
   def new
     @practice = Practice.new
+    @practice.build_sentence
+    @practice.build_marriage_act
+    @practice.user = current_user
   end
 
   # GET /practices/1/edit
@@ -25,6 +28,7 @@ class PracticesController < ApplicationController
   # POST /practices.json
   def create
     @practice = Practice.new(practice_params)
+    @practice.user = current_user
 
     respond_to do |format|
       if @practice.save
@@ -69,6 +73,6 @@ class PracticesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def practice_params
-      params.require(:practice).permit(:practice_type, :presentation_date, :sentence_id, :actor_id, :defendant_id, :magistrate_id, :marriage_act_id)
+      params.require(:practice).permit(:practice_type, :presentation_date, :sentence_id, :actor_id, :defendant_id, :magistrate_id, :marriage_act_id, sentence_attributes: [:number, :year, :sentence_date, :publication_date, :role_number, :role_year], marriage_act_attributes: [:number, :year, :registry, :part, :serie, :marriage_date])
     end
 end

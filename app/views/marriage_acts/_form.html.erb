@@ -1,0 +1,13 @@
+<%= simple_form_for @marriage_act, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :number %>
+  <%= f.input :year %>
+  <%= f.input :registry %>
+  <%= f.input :part %>
+  <%= f.input :serie %>
+  <%= f.input :marriage_date %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                marriage_acts_path, :class => 'btn' %>
+  </div>
+<% end %>

@@ -1,4 +1,4 @@
-<%- model_class = Sentence -%>
+<%- model_class = MarriageAct -%>
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
@@ -8,30 +8,30 @@
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:number) %></th>
       <th><%= model_class.human_attribute_name(:year) %></th>
-      <th><%= model_class.human_attribute_name(:sentence_date) %></th>
-      <th><%= model_class.human_attribute_name(:publication_date) %></th>
-      <th><%= model_class.human_attribute_name(:role_number) %></th>
-      <th><%= model_class.human_attribute_name(:role_year) %></th>
+      <th><%= model_class.human_attribute_name(:registry) %></th>
+      <th><%= model_class.human_attribute_name(:part) %></th>
+      <th><%= model_class.human_attribute_name(:serie) %></th>
+      <th><%= model_class.human_attribute_name(:marriage_date) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
-    <% @sentences.each do |sentence| %>
+    <% @marriage_acts.each do |marriage_act| %>
       <tr>
-        <td><%= link_to sentence.id, sentence_path(sentence) %></td>
-        <td><%= sentence.number %></td>
-        <td><%= sentence.year %></td>
-        <td><%= sentence.sentence_date %></td>
-        <td><%= sentence.publication_date %></td>
-        <td><%= sentence.role_number %></td>
-        <td><%= sentence.role_year %></td>
-        <td><%=l sentence.created_at %></td>
+        <td><%= link_to marriage_act.id, marriage_act_path(marriage_act) %></td>
+        <td><%= marriage_act.number %></td>
+        <td><%= marriage_act.year %></td>
+        <td><%= marriage_act.registry %></td>
+        <td><%= marriage_act.part %></td>
+        <td><%= marriage_act.serie %></td>
+        <td><%= marriage_act.marriage_date %></td>
+        <td><%=l marriage_act.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_sentence_path(sentence), :class => 'btn btn-mini' %>
+                      edit_marriage_act_path(marriage_act), :class => 'btn btn-mini' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      sentence_path(sentence),
+                      marriage_act_path(marriage_act),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'btn btn-mini btn-danger' %>
@@ -42,5 +42,5 @@
 </table>
 
 <%= link_to t('.new', :default => t("helpers.links.new")),
-            new_sentence_path,
+            new_marriage_act_path,
             :class => 'btn btn-primary' %>

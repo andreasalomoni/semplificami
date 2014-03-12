@@ -48,7 +48,7 @@ it:
         number: "Numero"
         year: "Anno"
         sentence_date: "Data"
-        pubblication_date: "Data di pubblicazione"
+        publication_date: "Data di pubblicazione"
         role_number: "Numero iscrizione a ruolo"
         role_year: "Anno iscrizione a ruolo"
         created_at: "Creata il"

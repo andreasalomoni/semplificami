@@ -69,6 +69,6 @@ class SentencesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def sentence_params
-      params.require(:sentence).permit(:number, :year, :sentence_date, :pubblication_date, :role_number, :role_year)
+      params.require(:sentence).permit(:number, :year, :sentence_date, :publication_date, :role_number, :role_year)
     end
 end

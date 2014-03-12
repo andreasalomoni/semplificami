@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140312114652) do
+ActiveRecord::Schema.define(version: 20140312171056) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -54,6 +54,17 @@ ActiveRecord::Schema.define(version: 20140312114652) do
     t.datetime "updated_at"
   end
 
+  create_table "marriage_acts", force: true do |t|
+    t.integer  "number"
+    t.integer  "year"
+    t.string   "registry"
+    t.string   "part"
+    t.string   "serie"
+    t.date     "marriage_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "practices", force: true do |t|
     t.integer  "practice_type"
     t.datetime "presentation_date"
@@ -64,6 +75,8 @@ ActiveRecord::Schema.define(version: 20140312114652) do
     t.integer  "marriage_act_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "practice_status"
+    t.integer  "user_id"
   end
 
   create_table "rails_admin_histories", force: true do |t|
@@ -83,7 +96,7 @@ ActiveRecord::Schema.define(version: 20140312114652) do
     t.integer  "number"
     t.integer  "year"
     t.datetime "sentence_date"
-    t.datetime "pubblication_date"
+    t.datetime "publication_date"
     t.integer  "role_number"
     t.integer  "role_year"
     t.datetime "created_at"

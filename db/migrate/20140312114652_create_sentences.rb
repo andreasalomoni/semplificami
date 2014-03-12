@@ -4,7 +4,7 @@ class CreateSentences < ActiveRecord::Migration
       t.integer :number
       t.integer :year
       t.datetime :sentence_date
-      t.datetime :pubblication_date
+      t.datetime :publication_date
       t.integer :role_number
       t.integer :role_year
 
