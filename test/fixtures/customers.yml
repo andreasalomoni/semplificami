@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  ragione_sociale: MyString
+  partita_iva: MyString
+  codice_fiscale: MyString
+  indirizzo: MyString
+  data_attivazione: 2013-08-30
+  stato: 
+
+two:
+  ragione_sociale: MyString
+  partita_iva: MyString
+  codice_fiscale: MyString
+  indirizzo: MyString
+  data_attivazione: 2013-08-30
+  stato: 

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+  <![endif]-->
+  <title>SemplificaMI</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
+  <%= csrf_meta_tags %>
+
+  <%= yield :head %>
+</head>
+<body class="<%= controller.controller_name %>">
+
+<div class="navbar navbar-fluid-top" role="navigation" id="topContainer">
+  <div class="navbar-inner">
+
+    <%= link_to image_tag("logo_cmi_small.png", alt: "SemplificaMI"), '#' , class: "span2"  %>
+
+    <div class="nav-collapse container-fluid">
+
+      <%= render 'layouts/login_items' %>
+
+    </div><!--/.nav-collapse -->
+
+
+
+
+
+  </div>
+
+</div>
+
+<%= bootstrap_flash %>
+
+<div class="container-fluid" id="middleContainer">
+  <div class="row-fluid" id="main">
+
+    <%= yield %>
+
+  </div><!--/row-->
+
+    <div class="row-fluid">
+      <div class="span8 offset4">
+        <div class="span8">
+          <footer>
+            <%= link_to image_tag("logoIntersail.png", alt: "Intersail Engineering Srl", class: "brand"), 'http://www.intersail.it/' , class: "span2"  %>
+            <p>&copy; <%= link_to 'Intersail 2014', 'http://www.intersail.it/', target: "_blank" %> - SemplificaMI <%= SEMPLIFICAMI_CONFIG['versione'] %></p>
+          </footer>
+        </div>
+      </div>
+    </div>
+
+  </div> <!-- /container -->
+
+
+
+<%= render 'layouts/modal' %>
+
+
+<script  type="text/javascript">
+    $('.datepicker').datepicker({language: 'it-IT', autoclose:true});
+</script>
+
+</body>
+</html>

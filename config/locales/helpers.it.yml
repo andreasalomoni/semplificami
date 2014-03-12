@@ -1,0 +1,14 @@
+it:
+  helpers:
+    actions: "Azioni"
+    submit:
+      create: "Aggiungi %{model}"
+      update: "Salve i cambiamenti"
+    links:
+      new: 'Nuovo'
+      cancel: 'Cancella'
+      destroy: 'Elimina'
+      modify: 'Modifica'
+      back: "Indietro"
+    titles:
+      new: 'Crea %{model}'

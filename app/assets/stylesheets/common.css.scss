@@ -1,0 +1,190 @@
+
+$col1: #faa732;
+$col2: #4bb1cf;
+$col3: #5eb95e;
+$col4: #dd514c;
+
+$col1a: lighten($col1, 10%);
+$col1b: darken($col1, 10%);
+
+$col2a: lighten($col2, 10%);
+$col2b: darken($col2, 10%);
+
+$col3a: lighten($col3, 10%);
+$col3b: darken($col3, 10%);
+
+
+$col4a: lighten($col4, 10%);
+$col4b: darken($col4, 10%);
+
+$colSelectedRow: rgba(255, 210, 36, 0.63);
+$colSelectedRowLight: lighten($colSelectedRow, 10%);
+$colSelectedRowDark: darken($colSelectedRow, 10%);
+
+$colsorting: #eee;
+
+$colHighlight: #ffe;
+
+.tooltip-inner {
+  background-color: #999;
+}
+
+table.dataTable tr.odd td.sorting_1 {
+  background-color: $colsorting !important;
+}
+
+table.dataTable tr.even td.sorting_1 {
+  background-color: lighten($colsorting, 5%) !important;
+}
+
+table.dataTable tr.even.row_highlight td {
+  background-color: $colHighlight !important;
+}
+table.dataTable tr.odd.row_highlight td {
+  background-color: $colHighlight !important;
+}
+
+table.dataTable td {
+  vertical-align: middle;
+}
+
+table.dataTable tr {
+  height: 36px;
+}
+
+
+table.dataTable tr.row_selected td {
+  background-color: $colSelectedRow;
+  background-image: -moz-linear-gradient(top, $colSelectedRowLight, $colSelectedRowDark) !important;
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from($colSelectedRowLight), to($colSelectedRowDark)) !important;
+  background-image: -webkit-linear-gradient(top, $colSelectedRowLight, $colSelectedRowDark) !important;
+  background-image: -o-linear-gradient(top, $colSelectedRowLight, $colSelectedRowDark) !important;
+  background-image: linear-gradient(to bottom, $colSelectedRowLight, $colSelectedRowDark) !important;
+}
+
+.PRONTO_PER_INVIO {
+  background-color: $col1 !important;
+  background-image: -moz-linear-gradient(top, $col1a, $col1b) !important;
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from($col1a), to($col1b)) !important;
+  background-image: -webkit-linear-gradient(top, $col1a, $col1b) !important;
+  background-image: -o-linear-gradient(top, $col1a, $col1b) !important;
+  background-image: linear-gradient(to bottom, $col1a, $col1b) !important;
+}
+
+.INVIATO {
+  background-color: $col2 !important;
+  background-image: -moz-linear-gradient(top, $col2a, $col2b) !important;
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from($col2a), to($col2b)) !important;
+  background-image: -webkit-linear-gradient(top, $col2a, $col2b) !important;
+  background-image: -o-linear-gradient(top, $col2a, $col2b) !important;
+  background-image: linear-gradient(to bottom, $col2a, $col2b) !important;
+}
+
+.CONSEGNATO {
+  background-color: $col3 !important;
+  background-image: -moz-linear-gradient(top, $col3a, $col3b) !important;
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from($col3a), to($col3b)) !important;
+  background-image: -webkit-linear-gradient(top, $col3a, $col3b) !important;
+  background-image: -o-linear-gradient(top, $col3a, $col3b) !important;
+  background-image: linear-gradient(to bottom, $col3a, $col3b) !important;
+}
+
+.ERRORE {
+  background-color: $col4 !important;
+  background-image: -moz-linear-gradient(top, $col4a, $col4b) !important;
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from($col4a), to($col4b)) !important;
+  background-image: -webkit-linear-gradient(top, $col4a, $col4b) !important;
+  background-image: -o-linear-gradient(top, $col4a, $col4b) !important;
+  background-image: linear-gradient(to bottom, $col4a, $col4b) !important;
+}
+
+#middleContainer h1 {
+  font-size: 20.5px;
+}
+#middleContainer h1,#middleContainer  h2,#middleContainer  h3 {
+  line-height: 0;
+}
+
+
+#logo a {
+  background-color: #ECF601;
+  left: -20px;
+  margin: 0;
+  padding-left: 20px;
+  padding-top: 3px;
+  position: relative;
+  border-bottom-right-radius:1em;
+}
+
+
+#topContainer  { margin-bottom: 1px; }
+#topContainer  { border-bottom:3px solid #ffbfbf;border-top:3px solid #ffbfbf
+}
+#middleContainer   { border-top:1px solid rgba(62, 57, 255, 0)
+}
+
+body .navbar .brand     { padding: 0; }
+.navbar .nav.last       { float: right;}
+
+
+footer   { left: 0}
+footer a {color: #999999;}
+footer a:hover { background: none; color: #000000;}
+footer p { color: #999; text-align: center}
+footer {
+  background-color: #FFFFFF;
+  bottom: 0;
+  clear: both;
+  position: fixed;
+  text-align: center;
+  width: 99%;
+  z-index: 999;
+}
+
+#middleContainer .simbolo { width: 16px; height: 16px ;display: block;}
+.simbolo.icon-account-1  {background-image: url("/assets/fax.png"); background-repeat:no-repeat;}
+.simbolo.icon-account-2  { background-image: url("/assets/mail.png"); background-repeat:no-repeat; }
+
+
+#loading { position: absolute; top:0; left: 0; width: 100%; height: 100%; z-index: 1000; background-color: #ffffff;  opacity:0.6;
+  filter:alpha(opacity=60); /* For IE8 and earlier */
+  background-image: url("/assets/loading.gif"); background-repeat:no-repeat;
+  background-position: center center;
+}
+
+.stato_90 { background-color: #ffdfdc !important;}
+div.alert { margin: 0}
+
+.table-fixed-header-container {
+  position:relative;
+  height:800px;
+  padding-top:30px;
+  margin-bottom: 10px;
+}
+
+.table-fixed-header-inner {
+  overflow:auto;
+  height:100%;
+}
+
+.table-fixed-header-inner table {
+  overflow: auto;
+}
+
+.table-fixed-header-inner th {
+  padding: 0 5px !important;
+}
+
+.table-fixed-header-inner th > div {
+  position:absolute;
+  top:0;
+}
+
+
+.progress {
+  width: 100%;
+}
+.progress-bar {
+  float: left;
+  display: inline-block;
+}

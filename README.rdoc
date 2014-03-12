@@ -1,0 +1,51 @@
+Installiamo Ruby on Rails
+
+#installiamo i prerequisiti
+
+
+#installiamo Ruby tramite rvm lanciando lo script
+$ \curl -L https://get.rvm.io | bash -s stable --ruby  
+
+#installiamo Rails
+
+-------------
+rake db:create 		--> crea un nuovo database
+rake db:migrate 	--> applica gli script di generazione
+rake db:seed		--> carica i dati di test (vedi file seeds.rb)
+
+
+
+
+<%- flash.each do |key, msg| -%>
+  <div id="<%= key %>">
+    <p style="float:right;"><%= link_to_function 'X', "Effect.Fade('#{key}')" %></p>
+    <p><%= msg %></p>
+    <div class="clear"></div>
+  </div>
+<%- end -%>
+
+
+
+
+
+-----
+$ rails new <nome progetto> --> crea il progetto
+$ rails g scaffold <nome risorsa> [<campo>[:<tipo>]] --> crea MVC per la risorsa
+$ rake db:migrate
+
+modificare gemfile per includere twitter-bootrstrap:
+gem "therubyracer"
+gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+gem "twitter-bootstrap-rails"
+
+$ bundle install
+
+# applico look&feel bootsrap
+$ rails g bootstrap:install outbox 	  --> genera i CSS etc. per la risorsa
+$ rails g bootstrap:themed outboxes	  --> tematizza la risorsa
+
+
+Aggiungere una colonna (relazione) ad una tabella (alla tabella Departments viene aggiunta la colonna customer_id)
+$ rails g migration AddCustomerIdToDepartments customer_id:integer
+
+

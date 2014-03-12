@@ -1,0 +1,13 @@
+public enum PendingRequestType { 
+	Nessuna = 0, 
+	TrasmettereADN = 10, 
+	RichiedereCF = 20, 
+	CompilareDatiNAR = 110, 
+	IscriverealNAR = 120, 
+	RichiederePediatra = 130 
+};
+
+public enum PendingRequestStatusType { 
+	Active = 10, 
+	Inactive = 20 
+};

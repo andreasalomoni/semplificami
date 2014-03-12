@@ -1,0 +1,38 @@
+ <% if current_user  %>
+
+
+  <ul class="nav">
+    <li class="divider-vertical"></li>
+    <li><%= link_to t('inboxes.index.title'), inboxes_url, id: "btn_inboxes" %></li>
+    <li class="divider-vertical"></li>
+    <li><%= link_to t('shipments.index.title'), shipments_url, id: "btn_shipments" %></li>
+    <li class="divider-vertical"></li>
+    <li><%= link_to t('stats.index.title'), stats_index_path, id: "btn_stats" %></li>
+    <li class="divider-vertical"></li>
+  </ul>
+ <% end %>
+
+
+  <ul class="nav last">
+    <% if user_signed_in? %>
+
+        <li><%= link_to "Amministrazione", rails_admin_path, id: "btn_admin" %></li>
+        <li class="divider-vertical"></li>
+
+    <li class="">
+      <%= link_to  edit_user_registration_path do %>
+          <i class="icon-user"></i> <%=  current_user.email %>
+      <% end %>
+    </li>
+    <li class="">
+      <%= link_to  destroy_user_session_path, :method => :delete do %>
+          <i class="icon-off"></i>
+      <% end %>
+    </li>
+
+    <% else %>
+    <li>
+      <%= link_to('Login', new_user_session_path)  %>
+    </li>
+    <% end %>
+  </ul>

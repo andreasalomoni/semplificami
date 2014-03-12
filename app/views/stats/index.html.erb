@@ -1,0 +1,94 @@
+<% require 'intersail/helpers' %>
+
+    <%= javascript_include_tag 'rgraph/RGraph.bar' %>
+    <%= javascript_include_tag 'rgraph/RGraph.line' %>
+    <%= javascript_include_tag 'rgraph/RGraph.common.core' %>
+    <%= javascript_include_tag 'rgraph/RGraph.common.dynamic' %>
+    <%= javascript_include_tag 'rgraph/RGraph.common.key' %>
+    <%= javascript_include_tag 'rgraph/RGraph.common.tooltips' %>
+    <%= javascript_include_tag 'rgraph/RGraph.common.effects' %>
+
+    <%= javascript_tag do %>
+        var bar;
+        var drilldown_params;
+        $(document).on("page:change", function () {
+            refreshData();
+        });
+    <% end %>
+
+    <%= javascript_tag do %>
+        function refreshData() {
+            RGraph.AJAX.getJSON('<%= stats_data_path %>?year=' + $('#year').val(), ajaxGraph);
+        }
+        function ajaxGraph(data) {
+            RGraph.Reset(document.getElementById('rgraph'));
+
+            bar = new RGraph.Bar('rgraph', data.values);
+            bar.Set('grouping','stacked');
+            bar.Set('labels', data.labels)
+            bar.Set('labels.above', true);
+            bar.Set('colors', ['#0f0', '#00f', '#0ff', '#f00']);
+            bar.Set('tooltips', data.tooltips);
+            bar.Set('tooltips.effect', 'fade');
+            bar.Set('tooltips.event','onmousemove');
+            bar.Set('key', data.keys);
+            bar.Set('key.position', 'gutter');
+            bar.Set('gutter.top', 75);
+            bar.Set('events.click', onBarClick);
+
+            /*bar.Draw();*/
+            RGraph.Effects.Bar.Grow(bar);
+            RGraph.Effects.Fade.In(bar);
+
+            drilldown_params = data.drilldownparams;
+        }
+
+        function onBarClick(e, bar)
+        {
+            var obj = bar[0];
+            var x   = bar[1];
+            var y   = bar[2];
+            var w   = bar[3];
+            var h   = bar[4];
+            var idx = bar[5];
+
+            RGraph.AJAX.getJSON('<%= stats_drilldown_path %>?'+ drilldown_params[idx], ajaxDrilldownGraph);
+        }
+
+        function ajaxDrilldownGraph(data) {
+            RGraph.Reset(document.getElementById('cvs'));
+    
+            line = new RGraph.Line('cvs', data.values);            
+            line.Set('labels', data.labels)            
+            line.Set('colors', ['#f00']);
+            line.Set('tooltips', data.tooltips);
+            line.Set('tooltips.effect', 'fade');
+            line.Set('title', data.title);
+            line.Set('text.angle', 45);
+            line.Set('gutter.bottom', 75);
+            line.Set('linewidth', 2);
+            line.Set('tickmarks', 'circle');
+
+            RGraph.Effects.Fade.In(line);
+        }
+    <% end %>
+
+
+
+<div class="page-header">
+    <h1>Stato Spedizioni</h1>
+</div>
+
+<div class="chart-container" style="width:100%;text-align:center">
+  <div class="chart-filter">
+    Anno: <%= select_year @cur_year, { start_year: 2012, end_year: Date.today.year }, { id: 'year', onchange: 'refreshData();' } %>
+  </div>
+  <div class="chart-master">
+    <canvas id="rgraph" width=800px" height="250">[Your browser doesn't support canvas]</canvas>
+  </div>
+  <div class="chart-drilldown">
+    <canvas id="cvs" width=800px" height="250">[Your browser doesn't support canvas]</canvas>
+  </div>
+</div>
+
+
