@@ -9,6 +9,7 @@ class DatePickerInput < SimpleForm::Inputs::StringInput
     value = object.send(attribute_name)
     input_html_options[:value] = value.nil?? nil : I18n.localize(value)
 
+    input_html_options[:type] = 'text'
     super
   end
 

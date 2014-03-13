@@ -52,6 +52,13 @@ it:
         role_number: "Numero iscrizione a ruolo"
         role_year: "Anno iscrizione a ruolo"
         created_at: "Creata il"
+      marriage_act:
+        number: "Numero"
+        year: "Anno"
+        registry: "Registro"
+        part: "Parte"
+        serie: "Serie"
+        marriage_date: "Data matrimonio"
       user:
         name: "Nome"
         password: "Password"

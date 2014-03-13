@@ -28,4 +28,8 @@ class Practice < ActiveRecord::Base
         'presentation_date' => Date.today
     }
   end
+
+  def self.set_user(user)
+    default_scope -> { where(user: user) }
+  end
 end

@@ -1,3 +1,15 @@
 // Place all the styles related to the Practices controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+div.simple_fields {
+  margin-top: 8px;
+  margin-bottom: 16px;
+
+
+  h3 {
+    padding-bottom: 12px;
+    font-size: 16px;
+    border-bottom: 1px solid #eee;
+  }
+}

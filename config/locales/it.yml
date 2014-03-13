@@ -10,9 +10,6 @@ it:
   practices:
     index:
       title: 'Pratiche'
-  sentences:
-    index:
-      title: 'Sentenze'
   devise:
     sessions:
       new:

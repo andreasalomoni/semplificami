@@ -2,20 +2,20 @@
   <%= f.input :practice_type %>
   <%= f.input :presentation_date, as: :date_picker %>
 
-    <%= div_for @practice.sentence do %>
-        <h2>Sentenza</h2>
+    <div class="simple_fields">
+        <h3>Sentenza</h3>
         <%= f.simple_fields_for :sentence do |s| %>
-            <%= s.input :number %>
+            <%= s.input :number, as: :string %>
             <%= s.input :year %>
             <%= s.input :sentence_date, as: :date_picker %>
             <%= s.input :publication_date, as: :date_picker %>
             <%= s.input :role_number %>
             <%= s.input :role_year %>
         <% end %>
-    <% end %>
+    </div>
 
-    <%= div_for @practice.marriage_act do %>
-        <h2>Atto</h2>
+    <div class="simple_fields">
+        <h3>Atto</h3>
         <%= f.simple_fields_for :marriage_act do |m| %>
             <%= m.input :number %>
             <%= m.input :year %>
@@ -24,7 +24,7 @@
             <%= m.input :serie %>
             <%= m.input :marriage_date, as: :date_picker %>
         <% end %>
-    <% end %>
+    </div>
 
   <div class="form-actions">
     <%= f.button :submit, :class => 'btn-primary' %>

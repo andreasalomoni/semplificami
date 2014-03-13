@@ -10,4 +10,8 @@ class User < ActiveRecord::Base
   def password_required?
     false
   end
+
+  def after_database_authentication
+    Practice.set_user(self)
+  end
 end

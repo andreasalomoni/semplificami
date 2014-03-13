@@ -6,10 +6,6 @@ class ApplicationController < ActionController::Base
   before_filter :configure_permitted_parameters, if: :devise_controller?
   before_filter :check_signed_in, unless: :devise_controller?
 
-  def current_customer
-    params[:customer_id]
-  end
-
   def render_modal( titolo, partial, after = nil)
       tpl = "#{params[:controller]}/#{params[:action]}"
       render :partial => 'layouts/show', locals: {:titolo => titolo, :corpo =>  partial, after: template_exists?(tpl) ? tpl : nil }
