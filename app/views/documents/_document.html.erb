@@ -1,0 +1,6 @@
+<%= div_for document do %>
+    <%= document.attachment.name %><%= attachmentLink document.attachment, ["View", "Download"] %>
+    <div class="actions">
+      <%= link_to 'delete', document, method: :delete, remote: :true %>
+    </div>
+<% end%>

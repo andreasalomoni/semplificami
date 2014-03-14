@@ -4,6 +4,7 @@ class Practice < ActiveRecord::Base
   belongs_to :sentence, dependent: :destroy
   belongs_to :user
   belongs_to :marriage_act, dependent: :destroy
+  has_and_belongs_to_many :documents
 
   accepts_nested_attributes_for :sentence
   accepts_nested_attributes_for :marriage_act
@@ -31,5 +32,19 @@ class Practice < ActiveRecord::Base
 
   def self.set_user(user)
     default_scope -> { where(user: user) }
+  end
+
+  def document=(value)
+    self.documents.build(value)
+  end
+  def to_jq_upload(document_params)
+    as = document_params[:attachmentStream]
+    {
+        "name" => as.original_filename,
+        "size" => as.headers.size,
+        "url" => '',#upload.url(:original),
+        "delete_url" => '',#upload_path(self),
+        "delete_type" => "DELETE"
+    }
   end
 end

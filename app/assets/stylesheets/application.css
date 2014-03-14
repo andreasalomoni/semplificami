@@ -11,6 +11,7 @@
  *= require_self
  *= require bootstrap-datepicker
  *= require jquery.dataTables
+ *= require jquery.fileupload-ui
  *= require_tree .
  */
 

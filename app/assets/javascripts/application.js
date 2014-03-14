@@ -19,4 +19,6 @@
 //= require jquery.dataTables.min
 //= require bootstrap_and_overrides
 //= require common
+//= require jquery_ujs
+//= require jquery-fileupload
 

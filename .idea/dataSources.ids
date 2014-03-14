@@ -1,16 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
-  <data-source source="LOCAL" name="Rails semplificami: development" product="SQLite" version="3.7.2" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native" uuid="5bf25c51-9a58-4035-9c43-92d42f4aac3e">
-    <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-    <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/development.sqlite3</jdbc-url>
-    <libraries>
-      <library>
-        <url>file://$USER_HOME$/Library/Preferences/RubyMine50/jdbc-drivers/xerial-sqlite-license.txt</url>
-      </library>
-      <library>
-        <url>file://$USER_HOME$/Library/Preferences/RubyMine50/jdbc-drivers/sqlite-jdbc-3.7.2.jar</url>
-      </library>
-    </libraries>
+  <data-source source="LOCAL" name="Rails semplificami: development" uuid="5bf25c51-9a58-4035-9c43-92d42f4aac3e">
+    <database-info product="SQLite" version="3.7.2" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native"/>
+    <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed"/>
     <schema name="" catalog=""/>
     <table name="active_admin_comments" schema="" catalog="" type="TABLE">
       <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4"/>
@@ -52,6 +44,19 @@
       <column name="type" sqlType="VARCHAR(255)" length="2000000000" precision="10" nullable="true" jdbcType="12"/>
       <column name="created_at" sqlType="DATETIME" length="2000000000" precision="10" nullable="true" jdbcType="12"/>
       <column name="updated_at" sqlType="DATETIME" length="2000000000" precision="10" nullable="true" jdbcType="12"/>
+      <primary-key columns="id"/>
+    </table>
+    <table name="documents" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4"/>
+      <column name="attachment_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4"/>
+      <column name="created_at" sqlType="DATETIME" length="2000000000" precision="10" nullable="true" jdbcType="12"/>
+      <column name="updated_at" sqlType="DATETIME" length="2000000000" precision="10" nullable="true" jdbcType="12"/>
+      <primary-key columns="id"/>
+    </table>
+    <table name="documents_practices" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" length="2000000000" precision="10" nullable="false" jdbcType="4"/>
+      <column name="practice_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4"/>
+      <column name="document_id" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4"/>
       <primary-key columns="id"/>
     </table>
     <table name="marriage_acts" schema="" catalog="" type="TABLE">
@@ -103,7 +108,7 @@
       <column name="number" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4"/>
       <column name="year" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4"/>
       <column name="sentence_date" sqlType="DATETIME" length="2000000000" precision="10" nullable="true" jdbcType="12"/>
-      <column name="pubblication_date" sqlType="DATETIME" length="2000000000" precision="10" nullable="true" jdbcType="12"/>
+      <column name="publication_date" sqlType="DATETIME" length="2000000000" precision="10" nullable="true" jdbcType="12"/>
       <column name="role_number" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4"/>
       <column name="role_year" sqlType="INTEGER" length="2000000000" precision="10" nullable="true" jdbcType="4"/>
       <column name="created_at" sqlType="DATETIME" length="2000000000" precision="10" nullable="true" jdbcType="12"/>
@@ -134,29 +139,11 @@
       <index name="index_users_on_email" unique="true" columns="email"/>
     </table>
   </data-source>
-  <data-source source="LOCAL" name="Rails semplificami: production" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="3c143fbf-ccbf-4160-b042-b22b40fa7c18">
-    <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-    <jdbc-url>jdbc:postgresql:semplificami_production</jdbc-url>
-    <libraries>
-      <library>
-        <url>file://$USER_HOME$/Library/Preferences/RubyMine50/jdbc-drivers/postgresql-driver-license.txt</url>
-      </library>
-      <library>
-        <url>file://$USER_HOME$/Library/Preferences/RubyMine50/jdbc-drivers/postgresql-9.2-1002.jdbc4.jar</url>
-      </library>
-    </libraries>
+  <data-source source="LOCAL" name="Rails semplificami: production" uuid="3c143fbf-ccbf-4160-b042-b22b40fa7c18">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
   </data-source>
-  <data-source source="LOCAL" name="Rails semplificami: test" product="SQLite" version="3.7.2" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native" uuid="b50e6419-b72f-474c-a3a9-f93c2d3e8dc0">
-    <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-    <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/test.sqlite3</jdbc-url>
-    <libraries>
-      <library>
-        <url>file://$USER_HOME$/Library/Preferences/RubyMine50/jdbc-drivers/xerial-sqlite-license.txt</url>
-      </library>
-      <library>
-        <url>file://$USER_HOME$/Library/Preferences/RubyMine50/jdbc-drivers/sqlite-jdbc-3.7.2.jar</url>
-      </library>
-    </libraries>
+  <data-source source="LOCAL" name="Rails semplificami: test" uuid="b50e6419-b72f-474c-a3a9-f93c2d3e8dc0">
+    <database-info product="SQLite" version="3.7.2" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native"/>
     <schema name="" catalog=""/>
   </data-source>
 </component>

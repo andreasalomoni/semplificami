@@ -5,8 +5,8 @@ module Intersail
       def self.destination_path
         Rails.root.join('public','attachments')
       end
-      def getUrl(attachment)
-        AttachmentUtil.destination_path.join("#{attachment.xid}").to_s
+      def url
+        AttachmentUtil.destination_path.join("#{self.xid}").to_s if(self.respond_to? :xid)
       end
 
       def saveStream(stream, opt = {})
@@ -20,6 +20,10 @@ module Intersail
 
           Attachment.new(xid: xid, name: opt[:name] || stream.original_filename, content_type: opt[:content_type] || stream.content_type )
       end
+
+      def destroyStream
+        File.delete url if url
+      end
      end
   end
 end
@@ -32,7 +36,7 @@ class Class
     args.each do |arg|
 
       #relation
-      self.class_eval("belongs_to :#{arg}, class_name: 'Attachment'")
+      self.class_eval("belongs_to :#{arg}, class_name: 'Attachment', dependent: :destroy")
       #setter
       self.class_eval("def #{arg}Stream=val; self.#{arg}=saveStream(val); end")
     end

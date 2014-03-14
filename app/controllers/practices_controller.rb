@@ -47,7 +47,8 @@ class PracticesController < ApplicationController
     respond_to do |format|
       if @practice.update(practice_params)
         format.html { redirect_to @practice, notice: 'Practice was successfully updated.' }
-        format.json { head :no_content }
+        format.json { render json: {files: [@practice.to_jq_upload(practice_params[:document])]}, status: :created, location: @practice }
+        format.js
       else
         format.html { render action: 'edit' }
         format.json { render json: @practice.errors, status: :unprocessable_entity }
@@ -73,6 +74,6 @@ class PracticesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def practice_params
-      params.require(:practice).permit(:practice_type, :presentation_date, :sentence_id, :actor_id, :defendant_id, :magistrate_id, :marriage_act_id, sentence_attributes: [:number, :year, :sentence_date, :publication_date, :role_number, :role_year], marriage_act_attributes: [:number, :year, :registry, :part, :serie, :marriage_date])
+      params.require(:practice).permit(:practice_type, :presentation_date, :sentence_id, :actor_id, :defendant_id, :magistrate_id, :marriage_act_id, sentence_attributes: [:number, :year, :sentence_date, :publication_date, :role_number, :role_year], marriage_act_attributes: [:number, :year, :registry, :part, :serie, :marriage_date], document: [:attachmentStream])
     end
 end

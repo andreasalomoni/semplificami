@@ -1,0 +1,8 @@
+<%= render @practice.documents %>
+
+<%= simple_form_for @practice, remote: true, authenticity_token: true, :html => { multipart: true, :class => 'form-vertical' } do |f| %>
+    <%= f.simple_fields_for :document do |d| %>
+        <%= d.input :attachmentStream, as: :file %>
+    <% end %>
+    <%= f.submit %>
+<% end %>

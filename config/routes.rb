@@ -6,6 +6,8 @@ SemplificaMI::Application.routes.draw do
 
   resources :practices
 
+  resources :documents
+
 #  get "stats/index"
 #  get "stats/data"
 #  get "stats/drilldown"

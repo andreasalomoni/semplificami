@@ -2,4 +2,17 @@
 <div class="page-header">
   <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human.titleize %></h1>
 </div>
-<%= render :partial => 'form' %>
+
+<div class="row-fluid">
+    <div class="span10">
+        <!-- Dati strutturati -->
+        <h3>Pratica</h3>
+        <%= render :partial => 'form' %>
+    </div>
+
+    <div class="span2">
+      <!-- Allegati -->
+      <h3>Allegati</h3>
+      <%= render partial: 'documents2' %>
+    </div>
+</div>
